@@ -6,7 +6,26 @@ class Bus {
   }
 
   notify (props, value, ...states) {
-    console.log (`notify id=${props.id} value="${value}" states=${JSON.stringify (states)}`);
+    const {state} = props;
+
+    console.log (
+      `notify ${state.id} ` +
+      `value="${value}" ` +
+      `gen=${state.generation} ` +
+      `states=${JSON.stringify (states)}`);
+
+    if (state.value === value) {
+      return;
+    }
+    state.set ('', value);
+
+    if (this._root) {
+      this._root.forceUpdate ();
+    }
+  }
+
+  attach (root) {
+    this._root = root;
   }
 }
 

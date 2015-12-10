@@ -7,7 +7,7 @@ var output = './webpack';
 module.exports = {
   target: 'web',
   debug: true,
-  devtool: 'eval',
+  devtool: 'source-map',
 
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
