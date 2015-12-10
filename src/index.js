@@ -5,10 +5,15 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Electrum from 'electrum';
 import {Theme} from 'electrum-theme';
 import {BasicField, Label} from 'electrum-arc';
 
 import {store} from './store.js';
+import {bus} from './bus.js';
+
+Electrum.reset ();
+Electrum.useBus (bus);
 
 const theme = Theme.create ('default');
 
