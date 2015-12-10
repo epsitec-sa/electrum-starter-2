@@ -6,7 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {Theme} from 'electrum-theme';
-import {Label} from 'electrum-arc';
+import {BasicField, Label} from 'electrum-arc';
 
 import {store} from './store.js';
 
@@ -17,6 +17,7 @@ ReactDOM.render (
     <h1>Electrum</h1>
     <p>That's it, this is the <b>root</b> component.</p>
     <Label state={store.root} theme={theme}/>
+    <BasicField id='1' state={store.root} theme={theme}/>
   </div>,
   document.getElementById ('root')
 );

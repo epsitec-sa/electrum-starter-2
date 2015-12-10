@@ -30,7 +30,7 @@
     "babel-preset-stage-0": "^6.2.4",
     "chai": "^3.4.1",
     "electrum": "^2.4.0",
-    "electrum-arc": "^1.9.3",
+    "electrum-arc": "^1.9.6",
     "electrum-events": "^1.0.3",
     "electrum-store": "^1.0.4",
     "electrum-theme": "^1.1.3",
