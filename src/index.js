@@ -12,11 +12,6 @@ import {BasicField, Label} from 'electrum-arc';
 import {store} from './store.js';
 import {bus} from './bus.js';
 
-Electrum.reset ();
-Electrum.useBus (bus);
-
-const theme = Theme.create ('default');
-
 class _Root extends React.Component {
   render () {
     return (
@@ -32,12 +27,15 @@ class _Root extends React.Component {
 
 const Root = Electrum.wrap ('Root', _Root);
 
-const scu = Root.prototype.shouldComponentUpdate;
-Root.prototype.shouldComponentUpdate = function (nextProps, nextState) {
-  const result = scu.call (this, nextProps, nextState);
-  console.log (`shouldComponentUpdate=${result} on <${this.constructor.displayName}>, path="${this.props.state.id}"`);
-  return result;
-};
+
+Electrum.reset ();
+Electrum.useBus (bus);
+Electrum.configureLog ('shouldComponentUpdate',
+  function (component, nextProps, nextState, result) {
+    console.log (`shouldComponentUpdate=${result} on <${component.constructor.displayName}>, path="${component.props.state.id}"`);
+  });
+
+const theme = Theme.create ('default');
 
 class AppHost extends React.Component {
   constructor (props) {
