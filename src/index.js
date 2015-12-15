@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 
 import Electrum from 'electrum';
 import {Theme} from 'electrum-theme';
-import {BasicField, Label} from 'electrum-arc';
+import {BasicField, BasicList, Label} from 'electrum-arc';
 
 import {store} from './store.js';
 import {bus} from './bus.js';
@@ -20,6 +20,12 @@ class _Root extends React.Component {
         <p>That's it, this is the <b>root</b> component.</p>
         <Label {...this.link ('message')}/>
         <BasicField id='1' {...this.link ('message')}/>
+        <hr/>
+        <BasicList {...this.link ('posts')} kind='scrollY' styles={{height: 100, width: 200, backgroundColor: '#eeeeee'}}
+          template={
+            state => <li style={{marginTop: 1, marginBottom: 1, height: 80, backgroundColor: 'white'}}>{state.get ('title')}</li>
+          }
+        />
       </div>
     );
   }
