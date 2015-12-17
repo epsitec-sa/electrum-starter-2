@@ -12,27 +12,7 @@ import {BasicField, BasicList, Label} from 'electrum-arc';
 import {store} from './store.js';
 import {bus} from './bus.js';
 
-class _Root extends React.Component {
-  render () {
-    return (
-      <div>
-        <h1>Electrum Starter 2</h1>
-        <p>That's it, this is the <b>root</b> component.</p>
-        <Label {...this.link ('message')}/>
-        <BasicField id='1' {...this.link ('message')}/>
-        <hr/>
-        <BasicList {...this.link ('posts')} kind='scrollY' styles={{height: 100, width: 200, backgroundColor: '#eeeeee'}}
-          template={
-            state => <li style={{marginTop: 1, marginBottom: 1, height: 80, backgroundColor: 'white'}}>{state.get ('title')}</li>
-          }
-        />
-      </div>
-    );
-  }
-}
-
-const Root = Electrum.wrap ('Root', _Root);
-
+import {Root} from './all.js';
 
 Electrum.reset ();
 Electrum.useBus (bus);

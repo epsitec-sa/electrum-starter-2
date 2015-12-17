@@ -37,7 +37,7 @@ module.exports = {
 
   module: {
     loaders: [
-      {test: /\.js$/,  exclude: /node_modules|jquery/, loaders: ['react-hot', 'babel-loader']},
+      {test: /\.js$/,  exclude: /node_modules|jquery/, loaders: ['babel-loader']},
 /*    {test: /\.css$/, loader: 'style-loader!css-loader'},
       {test: /\.less$/, loader: 'style-loader!css-loader!less-loader'},
       {test: /\.png$/, loader: 'url-loader?limit=100000&mimetype=image/png'},

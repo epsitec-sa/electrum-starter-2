@@ -6,11 +6,13 @@ var path = require ('path');
 
 var babelConfig = JSON.parse (fs.readFileSync (path.join (__dirname, '.babelrc')));
 babelConfig.babel = babel;
+
 module.exports = function (wallaby) {
   return {
     files: [
       {pattern: 'test/test-helper.js'},
       {pattern: 'src/store/**/*.js'},
+      {pattern: 'src/components/**/*.js'},
       {pattern: 'src/*.js'}
     ],
     tests: [
