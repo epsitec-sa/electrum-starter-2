@@ -3,6 +3,7 @@
 export default function (theme) {
   return {
     base: {
+      maxWidth: 600,
     },
     listStyle: {
       height: 100,

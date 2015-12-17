@@ -1,8 +1,17 @@
 'use strict';
 import Electrum from 'electrum';
+import _ContainerItem from './components/container-item.component.js';
+import _ContainerItem$styles from './components/container-item.styles.js';
 import _Container from './components/container.component.js';
 import _Container$styles from './components/container.styles.js';
+import _PostBody from './components/post-body.component.js';
+import _PostBody$styles from './components/post-body.styles.js';
+import _PostTitle from './components/post-title.component.js';
+import _PostTitle$styles from './components/post-title.styles.js';
 import _Root from './components/root.component.js';
 import _Root$styles from './components/root.styles.js';
+export const ContainerItem = Electrum.wrap ('ContainerItem', _ContainerItem, {styles: _ContainerItem$styles});
 export const Container = Electrum.wrap ('Container', _Container, {styles: _Container$styles});
+export const PostBody = Electrum.wrap ('PostBody', _PostBody, {styles: _PostBody$styles});
+export const PostTitle = Electrum.wrap ('PostTitle', _PostTitle, {styles: _PostTitle$styles});
 export const Root = Electrum.wrap ('Root', _Root, {styles: _Root$styles});

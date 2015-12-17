@@ -7,7 +7,6 @@ import ReactDOM from 'react-dom';
 
 import Electrum from 'electrum';
 import {Theme} from 'electrum-theme';
-import {BasicField, BasicList, Label} from 'electrum-arc';
 
 import {store} from './store.js';
 import {bus} from './bus.js';

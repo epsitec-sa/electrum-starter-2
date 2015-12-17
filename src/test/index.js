@@ -22,5 +22,7 @@ expect (store.root).to.have.property ('generation', 8);
 const theme = Theme.create ('default');
 
 const html = ReactDOMServer.renderToStaticMarkup (<Root theme={theme} state={store.root}/>);
+const sep = '</li></ul><hr/>';
+const end = html.substr (html.indexOf (sep) + sep.length);
 
-console.log (html);
+console.log (end);
